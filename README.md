@@ -13,16 +13,16 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 
-Key Features Implemented
+##Key Features Implemented
 This project was create using react + vites
 
-Search Functionality:
+## Search Functionality:
 
 Debounced search input to prevent excessive API calls
 
 Full-text search using GitHub's API
 
-Filtering:
+## Filtering:
 
 Language filter (JavaScript, Python, etc.)
 
@@ -30,19 +30,19 @@ Stars range filter (with predefined ranges)
 
 License filter (MIT, Apache, etc.)
 
-Sorting:
+## Sorting:
 
 Sort by stars, forks, or last updated
 
 Ascending or descending order
 
-Pagination:
+## Pagination:
 
 Dynamic page navigation based on total results
 
 Smart pagination display showing current page in context
 
-Performance Optimizations:
+## Performance Optimizations:
 
 Memoization of context values
 
@@ -52,13 +52,13 @@ Skeleton loading states
 
 Efficient API calls with all parameters
 
-Error Handling:
+## Error Handling:
 
 Display of error messages when API fails
 
 Empty state when no results found
 
-Clean Code Structure:
+## Clean Code Structure:
 
 Separation of concerns (UI, logic, data fetching)
 
@@ -66,9 +66,10 @@ Reusable components
 
 Custom hooks for business logic
 
-Installation: 
+## Installation: 
 Run: npm install
 
-To start this project;
+## To start this project;
 Run: npm run dev
+
 Local:   http://localhost:5173/

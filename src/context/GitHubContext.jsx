@@ -54,14 +54,20 @@ export function GitHubProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const value = useMemo(() => ({ state, dispatch }), [state]);
 
-  // In GitHubContext.js
 useEffect(() => {
   // Read from URL on initial load
   const params = new URLSearchParams(window.location.search);
   const initialStateFromURL = {
     query: params.get('q') || initialState.query,
     language: params.get('language') || initialState.language,
-    // ... other params
+    minStars: params.get('minStars') || initialState.minStars,
+    maxStars: params.get('maxStars') || initialState.maxStars,
+    license: params.get('license') || initialState.license,
+    sort: params.get('sort') || initialState.sort,
+    order: params.get('order') || initialState.order,
+    page: params.get('page') || initialState.page,
+    paperPgae: params.get('papaPage') || initialState.paperPgae,
+    repos: params.get('repos') || initialState.repos,
   };
   dispatch({ type: 'INIT_STATE', payload: initialStateFromURL });
 }, []);
@@ -71,7 +77,14 @@ useEffect(() => {
   const params = new URLSearchParams();
   if (state.query) params.set('q', state.query);
   if (state.language) params.set('language', state.language);
-  // ... other params
+  if (state.minStars) params.set('minStars', state.minStars);
+  if (state.maxStars) params.set('maxStars', state.maxStars);
+  if (state.license) params.set('license', state.license);
+  if (state.sort) params.set('sort', state.sort);
+  if (state.order) params.set('order', state.order);
+  if (state.page) params.set('page', state.page);
+  if (state.paperPgae) params.set('paperPage', state.paperPgae);
+  if (state.repos) params.set('repos', state.repos);
   
   window.history.pushState({}, '', `?${params.toString()}`);
 }, [state]);
@@ -83,7 +96,7 @@ useEffect(() => {
   );
 }
 
-// Add this custom hook for consuming the context
+//consuming the context
 export function useGitHubContext() {
   const context = useContext(GitHubContext);
   if (context === undefined) {

@@ -41,10 +41,11 @@
   margin: 0 0 12px 0;
   font-size: 14px;
   line-height: 1.5;
-  max-height: 4.5em; /* Limit to 3 lines (1.5 x 3) */
+  max-height: 4.5em; 
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -117,6 +118,7 @@
   .repo-card p {
     font-size: 13px;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     max-height: 3em;
   }
 }
