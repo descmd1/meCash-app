@@ -1,0 +1,141 @@
+.repo-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.repo-card {
+  background: white;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 16px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.repo-card:hover {
+  border-color: #d1d5da;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.repo-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.repo-card h3 a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.repo-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.repo-card p {
+  color: #57606a;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  max-height: 4.5em; /* Limit to 3 lines (1.5 x 3) */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.repo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: #57606a;
+  font-size: 12px;
+  align-items: center;
+}
+
+.repo-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Language color indicator */
+.repo-meta .language-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--language-color, #ccc);
+  display: inline-block;
+}
+
+/* GitHub-like topic tags */
+.repo-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.repo-topics a {
+  font-size: 12px;
+  padding: 3px 10px;
+  background-color: #ddf4ff;
+  color: #0969da;
+  border-radius: 2em;
+  text-decoration: none;
+}
+
+.repo-topics a:hover {
+  background-color: #b6e3ff;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .repo-list {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 544px) {
+  .repo-card {
+    padding: 12px;
+  }
+  
+  .repo-meta {
+    gap: 12px;
+  }
+  
+  .repo-card h3 {
+    font-size: 15px;
+  }
+  
+  .repo-card p {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+    max-height: 3em;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 400px) {
+  .repo-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .repo-card {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .repo-list {
+    margin: 16px -16px;
+  }
+}
